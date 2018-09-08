@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4333373413051864}
   - component: {fileID: 95966823373991956}
   m_Layer: 0
-  m_Name: lady_with_primroses
+  m_Name: Enemy_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
