@@ -1,0 +1,102 @@
+fileFormatVersion: 2
+guid: 8f994b5e0f4fae2498f8e0190c921bde
+ScriptedImporter:
+  fileIDToRecycleName:
+    100000: parisian_old_cobblestone_path/parisian_old_cobblestone_path
+    400000: parisian_old_cobblestone_path/parisian_old_cobblestone_path/Transform
+    2100000: mat.Parisian Old Cobblestone Path
+    2300000: parisian_old_cobblestone_path/parisian_old_cobblestone_path/MeshRenderer
+    2800000: Parisian Old Cobblestone Path_Base Color
+    2800002: Parisian Old Cobblestone Path_Normal
+    2800004: Parisian Old Cobblestone Path_Metallic
+    2800006: Parisian Old Cobblestone Path_Height
+    2800008: Parisian Old Cobblestone Path_Ambient Occlusion
+    3300000: parisian_old_cobblestone_path/parisian_old_cobblestone_path/MeshFilter
+    11400000: sbsar
+    11400002: graph0
+    13500000: parisian_old_cobblestone_path/parisian_old_cobblestone_path/SphereCollider
+    100100000: parisian_old_cobblestone_path
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 232528478, guid: 43a8bbf65be290d44ba52b94476242b9, type: 3}
+  mGraphInstanceData:
+  - graphLabel: Parisian Old Cobblestone Path
+    graphDescIndex: 0
+    generateAllOutputs: 0
+    generateMipMaps: 1
+    preset: " <sbspreset pkgurl=\"pkg://parisian_old_cobblestone_path\" label=\"\"
+      >\n  <presetinput identifier=\"$randomseed\" uid=\"3859869283\" type=\"4\" value=\"5557\"
+      />\n  <presetinput identifier=\"water_level\" uid=\"3335856656\" type=\"0\"
+      value=\"0.85\" />\n  <presetinput identifier=\"roughness\" uid=\"3347738055\"
+      type=\"0\" value=\"0.25\" />\n  <presetinput identifier=\"roughness_variation\"
+      uid=\"3334578540\" type=\"0\" value=\"0.58\" />\n  <presetinput identifier=\"metallic\"
+      uid=\"3347738056\" type=\"0\" value=\"0.15\" />\n </sbspreset>\n"
+    shaderName: Standard
+    outputNames: Base Color,Normal,Metallic,Height,Ambient Occlusion
+    texturePackingList:
+    - outputName: Diffuse
+      alphaSource: Diffuse
+    - outputName: Base Color
+      alphaSource: Base Color
+    - outputName: Normal
+      alphaSource: Normal
+    - outputName: Specular
+      alphaSource: Specular
+    - outputName: Glossiness
+      alphaSource: Glossiness
+    - outputName: Roughness
+      alphaSource: Roughness
+    - outputName: Metallic
+      alphaSource: Smoothness
+    - outputName: Height
+      alphaSource: Height
+    - outputName: Ambient Occlusion
+      alphaSource: Ambient Occlusion
+    colorSpaceList:
+    - outputName: Diffuse
+      bLinear: 0
+    - outputName: Base Color
+      bLinear: 0
+    - outputName: Normal
+      bLinear: 1
+    - outputName: Specular
+      bLinear: 0
+    - outputName: Glossiness
+      bLinear: 1
+    - outputName: Roughness
+      bLinear: 1
+    - outputName: Metallic
+      bLinear: 1
+    - outputName: Height
+      bLinear: 1
+    - outputName: Ambient Occlusion
+      bLinear: 1
+    inputTextureMap: []
+    targetSettingList:
+    - label: Default
+      bOverride: 0
+      bLockRatio: 1
+      bHighQuality: 0
+      textureWidth: 256
+      textureHeight: 256
+      textureFormat: 0
+      loadBehavior: 0
+    - label: Standalone
+      bOverride: 0
+      bLockRatio: 1
+      bHighQuality: 0
+      textureWidth: 256
+      textureHeight: 256
+      textureFormat: 0
+      loadBehavior: 0
+    - label: iPhone
+      bOverride: 0
+      bLockRatio: 1
+      bHighQuality: 0
+      textureWidth: 256
+      textureHeight: 256
+      textureFormat: 0
+      loadBehavior: 0
+    material: {fileID: 2100000, guid: 8f994b5e0f4fae2498f8e0190c921bde, type: 3}
