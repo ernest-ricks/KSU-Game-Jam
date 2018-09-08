@@ -4,6 +4,8 @@
 [Bb]uild/
 [Bb]uilds/
 KSU Game Jam/Assets/Shared*
+KSU Game Jam/Assets/Standard Assets*
+KSU Game Jam/Assets/SampleScenes*
 KSU Game Jam/Assets/Plugins/Substance*
 KSU Game Jam/Assets/Plugins/Substance.Engine.bundle*
 KSU Game Jam/Assets/Plugins*
