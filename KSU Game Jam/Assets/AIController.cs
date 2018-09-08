@@ -5,30 +5,64 @@ using UnityEngine.AI;
 
 
 public class AIController : MonoBehaviour {
-	GameObject FPSController;
-	Transform player;               // Reference to the player's position.
+	GameObject Player;
+	GameObject Enemy;
+	AudioSource audio;
+	
+
+	Transform playerT;               // Reference to the player's position.
 
 	NavMeshAgent nav;               // Reference to the nav mesh agent.
-	bool isSeen = false;
+	public bool isSeen = false;
 
 	void Awake ()
 	{
 		// Set up the references.
-		player = GameObject.FindGameObjectWithTag ("Player").transform;
+		
+		audio = GetComponent<AudioSource>();
+		playerT = GameObject.FindGameObjectWithTag ("Player").transform;
 
 		nav = GetComponent <NavMeshAgent> ();
 	}
 
 
-	void Update ()
+	void FixedUpdate ()
+	
 	{
 		if (isSeen==true) {
-			Debug.Log ("Stop");
+			nav.isStopped = true;
 
 		} else {
-			nav.SetDestination (player.position);
+			
+			if (nav.isStopped) nav.isStopped = false;
+			nav.SetDestination (playerT.position);
+			playFootsteps();
 		}
 
+
+	}
+	private void OnTriggerEnter(Collider col)
+	{
+		Debug.Log("Collided");
+		if (col.gameObject.tag == "Sight")
+		{
+			Debug.Log("In Sight");
+			isSeen = true;
+		}
 	}
 
+	private void OnTriggerExit(Collider other)
+	{
+		Debug.Log("Left");
+		if (other.gameObject.tag == "Sight") {
+			Debug.Log("Out Sight");
+			isSeen = false;
+		}
+	}
+	public void playFootsteps()
+	{
+		AudioClip Footsteps = GetComponent<AudioClip>();
+		audio.clip = Footsteps;
+		audio.Play();
+	}
 }

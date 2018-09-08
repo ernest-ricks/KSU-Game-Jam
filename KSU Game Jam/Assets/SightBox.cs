@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SightBox : MonoBehaviour {
 	
-	Vector3 boxSize;
+	public Vector3 boxSize;
 	LayerMask mask;
 	public enum colliderState {inactive, active, colliding }
 	public Color inactiveColor;
