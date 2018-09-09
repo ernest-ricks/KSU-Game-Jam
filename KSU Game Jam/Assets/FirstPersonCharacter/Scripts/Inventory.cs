@@ -26,7 +26,7 @@ public class Inventory : MonoBehaviour
         return true;
     }
 
-    void OnTriggerEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         Debug.Log("Colliding Inventory");
         if (other.gameObject.tag == ("Key"))

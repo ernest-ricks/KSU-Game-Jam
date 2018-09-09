@@ -18,9 +18,9 @@ public class DoorKey : MonoBehaviour
     {
     }
 
-    void OnTriggerEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Colliding");
+        Debug.Log("Key Collide");
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("Key Cool");
