@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
+
 
 
 public class AIController : MonoBehaviour {
@@ -14,6 +16,7 @@ public class AIController : MonoBehaviour {
 
 	NavMeshAgent nav;               // Reference to the nav mesh agent.
 	public bool isSeen = false;
+	public bool isAttacking;
 
 	void Awake ()
 	{
@@ -32,10 +35,14 @@ public class AIController : MonoBehaviour {
 		if (isSeen==true) {
 			nav.isStopped = true;
 
-		} else {
+		} else
+
+		{
 			
 			if (nav.isStopped) nav.isStopped = false;
+			Debug.Log("Attacking");
 			nav.SetDestination (playerT.position);
+			isAttacking = true;
 			playFootsteps();
 		}
 
@@ -48,6 +55,12 @@ public class AIController : MonoBehaviour {
 		{
 			Debug.Log("In Sight");
 			isSeen = true;
+			isAttacking = false;
+		}
+		if (col.gameObject.tag == "Player"&& (isAttacking))
+		{
+
+            SceneManager.LoadScene("GameOver");
 		}
 	}
 
@@ -65,4 +78,6 @@ public class AIController : MonoBehaviour {
 		audio.clip = Footsteps;
 		audio.Play();
 	}
+	
+
 }
