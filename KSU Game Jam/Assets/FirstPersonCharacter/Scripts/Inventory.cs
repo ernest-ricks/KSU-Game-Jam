@@ -23,7 +23,6 @@ public class Inventory : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Colliding Inventory");
         if (other.gameObject.tag == ("Key"))
         {
             Debug.Log("Key Cool");
