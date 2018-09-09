@@ -6,10 +6,14 @@ public class DoorKey : MonoBehaviour
 {
 
     public string assignedDoor;
+    AudioSource audioData;
+    MeshFilter meshFilter;
 
     // // Use this for initialization
     void Start()
     {
+        audioData = GetComponent<AudioSource>();
+        meshFilter = GetComponent<MeshFilter>();
         Debug.Log("Key Start");
     }
 
@@ -18,19 +22,17 @@ public class DoorKey : MonoBehaviour
     {
     }
 
-    void OnTriggerEnter(Collider other)
+    // void OnTriggerEnter(Collider other)
+    // {
+
+    // }
+
+    public void PickUp()
     {
-        Debug.Log("Key Collide");
-        if (other.gameObject.tag == "Player")
-        {
-            Debug.Log("Key Cool");
-            Inventory inventory = other.gameObject.GetComponent(typeof(Inventory)) as Inventory;
-            bool successfulAdd = inventory.addItem("Key_" + assignedDoor);
-            if (successfulAdd)
-            {
-                Destroy(this);
-            }
-        }
+        audioData.Play(0);
+        Debug.Log("Pick up log");
+        Destroy(this.meshFilter);
+        Destroy(this.gameObject, .180F);
     }
 }
 

@@ -11,6 +11,7 @@ public class Inventory : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        items = new Dictionary<string, string>();
         Debug.Log("Hello");
     }
 
@@ -20,24 +21,22 @@ public class Inventory : MonoBehaviour
 
     }
 
-    public bool addItem(string itemName)
-    {
-        items.Add(itemName, itemName);
-        return true;
-    }
-
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("Colliding Inventory");
         if (other.gameObject.tag == ("Key"))
         {
             Debug.Log("Key Cool");
-            DoorKey inventory = other.gameObject.GetComponent(typeof(DoorKey)) as DoorKey;
-            // bool successfulAdd = inventory.addItem("Key_" + assignedDoor);
-            // if (successfulAdd)
-            // {
-            //     Destroy(this);
-            // }
+            DoorKey doorKey = other.gameObject.GetComponent(typeof(DoorKey)) as DoorKey;
+            string key = "Key_" + doorKey.assignedDoor;
+            Debug.Log("Door Key");
+            Debug.Log("Hello " + items.Count + "Hello");
+            if (!items.ContainsKey(key))
+            {
+                Debug.Log("Door Tooo");
+                items.Add(key, key);
+                doorKey.PickUp();
+            }
         }
     }
 }
