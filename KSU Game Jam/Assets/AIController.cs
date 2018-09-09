@@ -9,7 +9,8 @@ using UnityEngine.SceneManagement;
 public class AIController : MonoBehaviour {
 	GameObject Player;
 	GameObject Enemy;
-	AudioSource audio;
+	public AudioSource audio;
+    public AudioClip Footsteps;
 	
 
 	Transform playerT;               // Reference to the player's position.
